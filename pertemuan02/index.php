@@ -1,4 +1,11 @@
 <?php
+
+$warna = array("merah", "hijau", "kuning", "biru");
+
+// foreach ($warna as $i) {
+// 	echo $i . "<br>";
+// }
+
 // function greeting() {
 // 	return "hello"
 // }
