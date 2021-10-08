@@ -8,15 +8,15 @@
 4. Masukkan perintah `git clone https://github.com/RobyCigar/asprak-informatika`
 
 ## Cara Update
-1. Masuk ke folder htdocs
+1. Masuk ke folder yang sudah kalian download.
+2. Klik kanan dan buka git bash.
+3. Masukkan perintah `git pull`.
 
-## Rangkuman Belajar dan Catatan Belajar 
+## Rangkuman Belajar 
 
 Mengeluarkan pesan ke halaman
 ```php
-<?php
 	echo "Hello world";
-?>
 ```
 Deklarasi variable
 ```php
@@ -35,11 +35,13 @@ Membuat indexed array dan mengaksesnya
 	echo $arr[0]; // merah
 	echo $arr[1]; // jingga
 ```
+
 Membuat associative array
 ```php
 	$arr = array("merah" => 4, "jingga" => 1, "kuning" => 40);
 ```
 Scope
+
 Deskripsi: variable yang ada di dalam function tidak dapat mengakses variable yang ada di luar function. Untuk dapat mengaksesnya dibutuhkan keyword `global`
 ```php
 	$apel = "hijau";
@@ -56,6 +58,7 @@ Deskripsi: variable yang ada di dalam function tidak dapat mengakses variable ya
 ```
 
 Membuat Konstanta
+
 Note: konstanta adalah variable yang tidak dapat diubah
 ```php
 	define("kampus", "amikom");
