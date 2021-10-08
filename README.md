@@ -39,4 +39,25 @@ Membuat associative array
 ```php
 	$arr = array("merah" => 4, "jingga" => 1, "kuning" => 40);
 ```
+Scope
+Deskripsi: variable yang ada di dalam function tidak dapat mengakses variable yang ada di luar function. Untuk dapat mengaksesnya dibutuhkan keyword `global`
+```php
+	$apel = "hijau";
+	function buah() {
+		// kita tidak dapat mengakses $apel
+	}
+```
+```php
+	$apel = "hijau";
+	function buah() {
+		global $apel;
+		// sekarang kita dapat mengakses $apel
+	}
+```
 
+Membuat Konstanta
+Note: konstanta adalah variable yang tidak dapat diubah
+```php
+	define("kampus", "amikom");
+	echo kampus;
+```
