@@ -1,5 +1,8 @@
 <h1 align="center">Repository Praktikum Pemrograman Web Lanjutan</h1>
 
+## Daftar Isi 
+
+
 ## Cara Download
 
 1. Install Git yang ada pada link berikut https://git-scm.com/downloads
@@ -13,6 +16,8 @@
 3. Masukkan perintah `git pull`.
 
 ## Rangkuman Belajar 
+
+### Syntax Dasar
 
 Mengeluarkan pesan ke halaman
 ```php
@@ -62,5 +67,20 @@ Membuat Konstanta
 Note: konstanta adalah variable yang tidak dapat diubah
 ```php
 	define("kampus", "amikom");
-	echo kampus;
+	echo kampus; // amikom
+```
+
+Mendapatkan jumlah item pada array
+
+```php
+	$warna = array("merah", "jingga", "kuning");
+	echo count($warna); // 3
+```
+
+### Struktur Kendali
+
+Perulangan for
+
+```php
+	for()
 ```
