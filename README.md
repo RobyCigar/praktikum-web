@@ -1,4 +1,4 @@
-<h1 align="center">Repository Praktikum Pemrograman Web Lanjutan</h1>
+<h1 align="center">Rangkuman Belajar Praktikum Pemrograman Web Lanjutan</h1>
 
 ## Daftar Isi 
 
@@ -79,8 +79,20 @@ Mendapatkan jumlah item pada array
 
 ### Struktur Kendali
 
+Percabangan if 
+
+```php
+	if(statement) {
+		// code
+	}
+
+```
+
 Perulangan for
 
 ```php
-	for()
+	for() {
+		// code
+	}
+
 ```
