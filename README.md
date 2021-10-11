@@ -97,6 +97,8 @@ Perulangan for
 
 ```
 
+### Forms
+
 $_GET adalah variable superglobal yang digunakan untuk mengirimkan data yang **TIDAK sensitive**, seperti searchbox.
 
 ```php
