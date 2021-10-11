@@ -91,8 +91,31 @@ Percabangan if
 Perulangan for
 
 ```php
-	for() {
+	for($i = 0; i < count($arr); $i++) {
 		// code
 	}
 
 ```
+
+$_GET adalah variable superglobal yang digunakan untuk mengirimkan data yang **TIDAK sensitive**, seperti searchbox.
+
+```php
+
+	$_GET
+	print_r($_GET) // menghasilkan associative array jika form telah di submit 
+```
+
+$_POST adalah variable superglobal yang digunakan untuk mengirimkan data **yang sensitive**, seperti email, password dan lain-lain.
+
+
+```php
+
+	$_POST
+	print_r($_POST) // menghasilkan associative array jika form telah di submit 
+
+```
+
+
+
+
+
