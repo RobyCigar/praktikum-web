@@ -117,7 +117,13 @@ $_POST adalah variable superglobal yang digunakan untuk mengirimkan data **yang 
 
 ```
 
+Regex untuk validasi input, sehingga hanya menerima input berupa alphabet 
 
+
+```php
+preg_match("/[^A-Za-z'-]/",$_POST['nama'] )
+
+```
 
 
 
