@@ -2,7 +2,7 @@
 if (!isset($_POST["nama"]) && !isset($_POST["usia"])) {
 	die("nama dan usia tidak tersedia");
 } else {
-	if (preg_match("/[^A-Za-z'-]/", $_POST['nama'])) {
+	if (preg_match_all("/[^A-Za-z'\s-]/", $_POST['nama'])) {
 		die("nama harus huruf saja");
 	}
 }
@@ -10,13 +10,17 @@ if (!isset($_POST["nama"]) && !isset($_POST["usia"])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Dashboard</title>
 </head>
+
 <body>
 	<h1>Selamat datang di dashboard</h1>
-	nama: <?=$_POST["nama"];?>
-	usia: <?=$_POST["usia"];?>
+	<h1>Dasboard ini menggunakan method POST</h1>
+	nama: <?= $_POST["nama"]; ?>
+	usia: <?= $_POST["usia"]; ?>
 </body>
+
 </html>
