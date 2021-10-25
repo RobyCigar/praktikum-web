@@ -1,5 +1,6 @@
 <?php
 session_start();
+print_r($_SESSION);
 /* if disini untuk men-cek apakah ada session["username"] yang telah di set, jika belum maka akan diarahkan ke file login.php */
 if(!isset($_SESSION["username"]))
 {
