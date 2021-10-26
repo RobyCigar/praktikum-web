@@ -5,6 +5,7 @@ if(!isset($_SESSION["username"]))
 {
  header("location:login.php");
 }
+
 ?>
 <!-- mulai darisini adalah tampilan jika sudah berhasil set session[type] -->
 <html>
@@ -21,8 +22,13 @@ if(!isset($_SESSION["username"]))
    <br />
 
    <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <div class="form-group"> <label class="form-label" for="customFile">Coba Upload File</label><input type="file" class="form-control" id="customFile" name="file" /></div>
-        <div class="form-group"><input class="btn btn-primary" type="submit" value="Upload" /></div>
+        <div class="form-group"> 
+            <label class="form-label" for="customFile">Coba Upload File</label>
+            <input type="file" class="form-control" id="customFile" name="file" />
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Upload" />
+        </div>
     </form>
 
    <div align="right">
