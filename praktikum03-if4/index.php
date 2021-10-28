@@ -2,7 +2,7 @@
 session_start();
 /* if disini untuk men-cek apakah ada session["username"] yang telah di set, jika belum maka akan diarahkan ke file login.php */
 if (!isset($_SESSION["username"])) {
-    header("location:login.php");
+	header("location:login.php");
 }
 
 ?>
@@ -22,15 +22,25 @@ if (!isset($_SESSION["username"])) {
         <h2 align="center">Menggunakan Session Untuk Login/Logout</h2>
         <br />
 
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <label>Coba upload file</label>
+            <div class="form-group">
+                <input class="form-control" type="file" name="file">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Upload" name="submit">
+            </div>
+        </form>
+
         <div align="right">
             <a href="logout.php">Logout</a>
         </div>
         <br />
         <?php
-        if (isset($_SESSION["username"])) {
-            echo '<h2 align="center"> Hai ' . $_SESSION['username'] . ',Anda berhasil men-set Session !</h2>';
-        }
-        ?>
+if (isset($_SESSION["username"])) {
+	echo '<h2 align="center"> Hai ' . $_SESSION['username'] . ',Anda berhasil men-set Session !</h2>';
+}
+?>
     </div>
 </body>
 
