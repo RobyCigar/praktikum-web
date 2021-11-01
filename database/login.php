@@ -1,7 +1,9 @@
-<?php 
+<?php
 session_start();
-if (isset($_SESSION['username'])) {
-  
+
+if(isset($_SESSION['id']) && isset($_SESSION['username'])){
+    header("location:index.php");
+}
 ?>
 
 <!doctype html>
@@ -14,13 +16,38 @@ if (isset($_SESSION['username'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Dashboard</title>
+    <title>Login Page with Database</title>
   </head>
   <body>
-    <h1 style="text-align:center; color:black; padding:5px">Hello, <?php if(isset($_SESSION['username'])){
-      echo $_SESSION['name'];
-    }  ?> </h1>
-    <a href="logout.php" style="background:#555; padding:10px 15px; color:#fff; float:right;">Logout disini!</a>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+    
+    <form class="border shadow p-3 rounded" action="cek-login.php" method="POST" style="width: 450px;">
+    
+    <h2>LOGIN</h2>
+
+    <span>
+        <?php
+
+        if (isset($_GET['error'])){
+            echo "<p class='error' style='background: #E57676; color:#FFFFFF;'>";
+            echo $_GET['error'];
+        }
+    
+        ?>
+    </span>
+
+        <div class="mb-3">
+            <label class="form-label">User name</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div> 
+
+        <button type="submit" class="btn btn-primary" >Login</button>
+    </form>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -34,11 +61,3 @@ if (isset($_SESSION['username'])) {
     -->
   </body>
 </html>
-
-<?php
-} else {
-  header("location:login.php");
-}
-
-
-?>

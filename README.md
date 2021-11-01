@@ -125,5 +125,42 @@ Regex untuk validasi input, sehingga hanya menerima input berupa alphabet
 
 ```
 
+### Built in Function dan Syntax yang Sering Digunakan di PHP
+
+trim() adalah function yang berfungsi  untuk menghilangkan whitespace dan special characters yang terdapat di awal dan akhir string 
+
+```php
+$str = trim("\t\tThese are a few words :) ...  "); 
 
 
+echo $str; // hasil: These are a few words :) ...
+
+```
+
+htmlspecialchars() adalah function wajib biar nggak ke hack
+
+```php
+$new = htmlspecialchars("<a href='test'>Test</a>", ENT_QUOTES);
+echo $new; // &lt;a href=&#039;test&#039;&gt;Test&lt;/a&gt;
+
+```
+
+stripslashes() berfungsi untuk menghilangkan backslash
+
+```php
+$str = "Is your name O\'reilly?";
+
+// Outputs: Is your name O'reilly?
+echo stripslashes($str);
+
+```
+
+exit() untuk mengakhiri script php
+
+``` php
+
+exit();
+
+echo "hello world"; // baris ini tidak akan tereksekusi
+```
+```
