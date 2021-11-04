@@ -1,23 +1,36 @@
 <?php
-
-print_r($_POST);
+// memasukkan data ke database
 
 if (isset($_POST['submit'])) {
-    $no_rumah = $_POST['no_rumah'];
-    $jalan = $_POST['jalan'];
-    $kota = $_POST['kota'];
-    $kode_pos = $_POST['kode_pos'];
 
+    function validate($data)
+    {
+        $data = trim($data); // " String   " -> "String"
+        $data = stripslashes($data); // " \n \fsaf" -> "n fsaf"
+        $data = htmlspecialchars($data); // "<a>Link</a>" -> "&lt;a&gt;Link&lt;/a&gt;"
+        return $data;
+    }
 
-    $conn = mysqli_connect('localhost', 'root', '', 'praktikum');
+    // memasukkan data dari user ke dalam variabel
+    $city = validate($_POST['city']);
+    $street = validate($_POST['street']);
+    $no_branch = validate($_POST['no_branch']);
+    $post_code = validate($_POST['post_code']);
 
+    // membangun koneksi ke database
+    $conn = mysqli_connect("localhost", "root", "", "dreamhome");
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-    $sql = "INSERT INTO alamat (no_rumah, jalan, kota, kode_pos) VALUES ('$no_rumah', '$jalan', '$kota', '$kode_pos')";
+    // memasukkan data ke database
+    $sql = "INSERT INTO branch (branchNo, street, city, postCode) VALUES ('{$no_branch}',  '{$street}' , '$city', '$post_code' )";
 
+    $query = mysqli_query($conn, $sql);
 
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+    if ($query) {
+        echo "Data berhasil ditambahkan";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Data gagal ditambahkan";
     }
 }

@@ -1,19 +1,23 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "praktikum");
+// mengkoneksikan php dengna mysql
+// membuat query
+// menampilkan
 
+$conn = mysqli_connect("localhost", "root", "", "dreamhome");
 
-$sql = "SELECT * FROM alamat";
-$query = mysqli_query($conn, $sql);
-
-$rows = [];
-
-while ($hasil = mysqli_fetch_assoc($query)) {
-    $rows[] = $hasil;
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
+$result = mysqli_query($conn, "SELECT * FROM branch ORDER BY branchNo") or die(mysqli_error($conn));
+
+while ($data = mysqli_fetch_array($result)) {
+    $rows[] = $data;
+}
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,22 +30,22 @@ while ($hasil = mysqli_fetch_assoc($query)) {
 </head>
 
 <body>
-    <!-- please create table  -->
-    <table border="1">
+    <table>
         <tr>
-            <th>No Rumah</th>
-            <th>Jalan</th>
-            <th>Kota</th>
-            <th>Kode Pos</th>
+            <th>No Branch</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Post Code</th>
         </tr>
         <?php foreach ($rows as $row) : ?>
             <tr>
-                <td><?= $row['no_rumah']; ?></td>
-                <td><?= $row['jalan']; ?></td>
-                <td><?= $row['kota']; ?></td>
-                <td><?= $row['kode_pos']; ?></td>
+                <td><?= $row['branchNo'] ?></td>
+                <td><?= $row['street'] ?></td>
+                <td><?= $row['city'] ?></td>
+                <td><?= $row['postCode'] ?></td>
             </tr>
         <?php endforeach; ?>
+
     </table>
 </body>
 

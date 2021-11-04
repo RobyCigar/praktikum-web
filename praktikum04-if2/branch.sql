@@ -10,28 +10,28 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
--- Database: `praktikum`
+-- Database: `dreamhome`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat`
+-- Table structure for table `branch`
 --
 
-CREATE TABLE `alamat` (
-  `no_rumah` char(6) collate latin1_general_ci NOT NULL,
-  `jalan` varchar(20) collate latin1_general_ci NOT NULL,
-  `kota` varchar(20) collate latin1_general_ci NOT NULL,
-  `kode_pos` varchar(10) collate latin1_general_ci NOT NULL,
-  PRIMARY KEY  (`no_rumah`)
+CREATE TABLE `branch` (
+  `branchNo` char(6) collate latin1_general_ci NOT NULL,
+  `street` varchar(20) collate latin1_general_ci NOT NULL,
+  `city` varchar(20) collate latin1_general_ci NOT NULL,
+  `postCode` varchar(10) collate latin1_general_ci NOT NULL,
+  PRIMARY KEY  (`branchNo`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='menyimpan data kantor cabang';
 
 --
--- Dumping data for table `alamat`
+-- Dumping data for table `branch`
 --
 
-INSERT INTO `alamat` (`no_rumah`, `jalan`, `kota`, `kode_pos`) VALUES
+INSERT INTO `branch` (`branchNo`, `street`, `city`, `postCode`) VALUES
 ('B005', '22 Deer Rd', 'London', 'SW1 4EH'),
 ('B007', '16 Argyll St', 'Aberdeen', 'AB2 3SU'),
 ('B003', '163 Main St', 'Glasgow', 'G11 9QX'),
