@@ -18,6 +18,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $uname = validate($_POST['username']);
     $pass = validate($_POST['password']);
     $md5pass = hash("md5", $pass);
+    // $md5pass = hash("sha256", $pass);
+    
 
     if (empty($uname)) {
         header("location:login.php?error=Username wajib diisi");
