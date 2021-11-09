@@ -28,6 +28,7 @@ if (isset($_POST['submit'])) {
 
     $query = mysqli_query($conn, $sql);
 
+    
     if ($query) {
         echo "Data berhasil ditambahkan";
     } else {
