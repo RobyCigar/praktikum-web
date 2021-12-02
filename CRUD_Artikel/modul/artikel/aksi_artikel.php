@@ -25,8 +25,8 @@ switch ($act) {
         if (($extension == "bmp") || ($extension == "gif") || ($extension == "jpg") || ($extension == "jpeg") || ($extension == "png") || ($extension == "pdf") || ($extension == "pNamaGambar")) {
             if (move_uploaded_file($_FILES['gambar']['tmp_name'], "../../upload/artikel/" . $NamaGambar)) {
                 createThumb($gambar, 'artikel', $NamaGambar);
-        $query = "INSERT INTO artikel(id_artikel, judul, isi, gambar) VALUES ('$id_artikel', '$judul', '$isi', '$NamaGambar')";
-        $sql = mysqli_query($conn,$query) or die("cek : " . mysqli_error($conn));
+                $query = "INSERT INTO artikel(id_artikel, judul, isi, gambar) VALUES ('$id_artikel', '$judul', '$isi', '$NamaGambar')";
+                $sql = mysqli_query($conn,$query) or die("cek : " . mysqli_error($conn));
         if ($sql) {
             url("artikel&con=0");
         } else {
