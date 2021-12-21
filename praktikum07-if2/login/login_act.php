@@ -3,7 +3,7 @@
 
 session_start();
 
-include "../config/conn.php";
+include "db_conn.php";
 
 $username = $_POST['username'];
 $password = md5($_POST['password']);

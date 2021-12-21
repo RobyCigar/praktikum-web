@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- github copilot tolong buatkan form -->
     <form action="proses.php" method="post">
         <label for="nama">No branch</label><br>
         <input type="text" name="no_branch" id="nama">
