@@ -87,11 +87,15 @@ if (isset($_GET['search'])) {
                 <th>Action</th>
             </tr>
             <?php foreach ($rows as $row) : ?>
+            <?php
+                
+            ?>
                 <tr>
                     <td><?= $row['branchNo'] ?></td>
                     <td><?= $row['street'] ?></td>
                     <td><?= $row['city'] ?></td>
                     <td><?= $row['postCode'] ?></td>
+                    <td><img src="" alt=""></td>
                     <td>
                         <a href="edit.php?branchNo=<?= $row['branchNo'] ?>">EDIT</a>
                         <a href="proses.php?action=hapus&branchNo=<?= $row['branchNo'] ?>" onclick="return confirm('Yakin mau hapus data ini?')">HAPUS</a>
