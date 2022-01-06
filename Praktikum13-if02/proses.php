@@ -1,12 +1,5 @@
 <?php
 
-function validate($data)
-    {
-        $data = trim($data); // " String   " -> "String"
-        $data = stripslashes($data); // " \n \fsaf" -> "n fsaf"
-        $data = htmlspecialchars($data); // "<a>Link</a>" -> "&lt;a&gt;Link&lt;/a&gt;"
-        return $data;
-    }
 
 if(!empty($_POST)){
 
@@ -51,7 +44,6 @@ if(!empty($_POST)){
 
 }elseif(!empty($_GET)){
     if($_GET['action'] === "hapus"){
-        $conn = mysqli_connect("localhost", "root", "", "dreamhome");
 
         $branch_no = $_GET['branchNo'];
 
